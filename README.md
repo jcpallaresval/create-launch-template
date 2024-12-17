@@ -1,6 +1,7 @@
 # create-launch-template
 Launch Template for ansible role
 
+```yaml
 create-launch-template/
 ├── README.md
 ├── tasks/
@@ -19,6 +20,7 @@ create-launch-template/
 │   ├── inventory
 │   ├── test.yml
 ├── .gitignore
+```
 
  Ansible Role: Launch Template
 
