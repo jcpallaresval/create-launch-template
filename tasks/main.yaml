@@ -1,12 +1,18 @@
-- name: Create launch template
+- name: Create Launch Template
   amazon.aws.ec2_launch_template:
-    name: "{{ launch_template_name }}"
-    image_id: "{{ image_id }}"
-    instance_type: "{{ instance_type }}"
-    key_name: "{{ key_name | default(omit) }}"
-    security_group_ids: "{{ security_group_ids }}"
-    user_data: "{{ user_data | default(omit) }}"
-  register: launch_template
+    region                : "{{ lt.region }}"
+    name                  : "{{ lt.name }}"
+    image_id              : "{{ lt.image_id }}"
+    key_name              : "{{ lt.key_name }}"
+    instance_type         : "{{ lt.instance_type }}"
+    security_groups       : "{{ lt.security_groups }}"
+    monitoring            : "{{ lt.monitoring }}"
+    iam_instance_profile  : "{{ lt.iam_instance_profile }}"
+    user_data             : "{{ lt.user_data }}"
+    network_interfaces:
+      - device_index: 0       #REVISAR ESTE PARAMETRO Y QUE ES OBLIGATORIO
+        associate_public_ip_address: "{{ lt.associate_public_ip_address }}"
+  register                : launch_template
 
 - name: Debug launch template creation
   debug:

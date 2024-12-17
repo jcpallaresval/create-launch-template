@@ -1,2 +1,17 @@
 # These are defaults and can be overridden by the user
-launch_template_name: "default-launch-template"
+launch_template_name: "create-launch-template"
+
+# ID de la AMI (Amazon Machine Image)
+image_id: "ami-12345678"
+
+# Tipo de instancia EC2
+instance_type: "t2.micro"
+
+# Nombre de la llave SSH (Key Pair) - puede omitirse si no se especifica
+key_name: ""
+
+# IDs de los Security Groups - lista vacía por defecto
+security_group_ids: []
+
+# User Data - script de inicialización de la instancia (puede omitirse)
+user_data: ""
