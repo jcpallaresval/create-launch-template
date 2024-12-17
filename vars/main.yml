@@ -1,0 +1,7 @@
+# Define default variables for the role
+launch_template_name: "default-launch-template"
+image_id: "ami-1234567890abcdef"
+instance_type: "t2.micro"
+key_name: "my-key-pair"
+security_group_ids: []
+user_data: ""

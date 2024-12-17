@@ -1,0 +1,2 @@
+# These are defaults and can be overridden by the user
+launch_template_name: "default-launch-template"

@@ -1,0 +1,13 @@
+- name: Create launch template
+  amazon.aws.ec2_launch_template:
+    name: "{{ launch_template_name }}"
+    image_id: "{{ image_id }}"
+    instance_type: "{{ instance_type }}"
+    key_name: "{{ key_name | default(omit) }}"
+    security_group_ids: "{{ security_group_ids }}"
+    user_data: "{{ user_data | default(omit) }}"
+  register: launch_template
+
+- name: Debug launch template creation
+  debug:
+    var: launch_template

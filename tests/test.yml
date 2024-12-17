@@ -1,0 +1,10 @@
+- name: Test ansible-launch-template role
+  hosts: localhost
+  roles:
+    - ansible-launch-template
+  vars:
+    launch_template_name: "test-launch-template"
+    image_id: "ami-0abcd1234efgh5678"
+    instance_type: "t2.micro"
+    security_group_ids:
+      - "sg-0abcd1234efgh5678"
